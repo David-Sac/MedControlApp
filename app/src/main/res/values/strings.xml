@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MedControlApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_today">Hoy</string>
+    <string name="title_history">Mi Historia</string>
+    <string name="title_medicines">Medicinas</string>
+    <string name="title_tips">Consejos</string>
+</resources>

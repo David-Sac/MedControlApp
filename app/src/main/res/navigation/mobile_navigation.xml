@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_history">
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.example.medcontrolapp.ui.history.HistoryFragment"
+        android:label="@string/title_history"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/navigation_today"
+        android:name="com.example.medcontrolapp.ui.today.TodayFragment"
+        android:label="@string/title_today"
+        tools:layout="@layout/fragment_today" />
+
+    <fragment
+        android:id="@+id/navigation_medicines"
+        android:name="com.example.medcontrolapp.ui.medicines.MedicinesFragment"
+        android:label="@string/title_medicines"
+        tools:layout="@layout/fragment_medicines" />
+
+    <fragment
+        android:id="@+id/navigation_tips"
+        android:name="com.example.medcontrolapp.ui.tips.TipsFragment"
+        android:label="@string/title_tips"
+        tools:layout="@layout/fragment_tips" />
+</navigation>
