@@ -11,9 +11,20 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.medcontrolapp.ui.medicines.MedicinesFragment;
 import com.example.medcontrolapp.ui.medicines.MedicinesViewModel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +33,8 @@ import com.example.medcontrolapp.ui.medicines.MedicinesViewModel;
  */
 public class MedDiarioD extends Fragment {
     CardView btnSiguiente;
+    private RequestQueue requestQueue;
+    private String url = "https://universidadbackend.azurewebsites.net/crearmedicina";
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -71,6 +84,63 @@ public class MedDiarioD extends Fragment {
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String url = "https://universidadbackend.azurewebsites.net//crearmedicina";
+
+                // Crea la cadena JSON como se muestra en tu ejemplo
+                String requestBody = "{" +
+                        "\"id\":0," +
+                        "\"idUsuario\":1," +
+                        "\"nombre\":\"Aspirina\"," +
+                        "\"hora\":\"13:30\"," +
+                        "\"unidad\":1," +
+                        "\"cantidad\":1," +
+                        "\"fechaInicio\":\"2024-03-12T19:33:13.450Z\"," +
+                        "\"fechaFin\":\"2024-03-12T19:33:13.450Z\"," +
+                        "\"observacion\":0," +
+                        "\"frecuenciaNumerica\":2," +
+                        "\"frecuensiaSeleccion\":[0]," +
+                        "\"estado\":true" +
+                        "}";
+
+                // Crear la cola de solicitudes Volley
+                RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+
+                // Crear la solicitud POST con Volley
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                // Manejar la respuesta del servidor
+                                try {
+                                    int resultado = response.getInt("resultado");
+                                    // Resto del código para manejar la respuesta...
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                // Manejar errores de la solicitud
+                                error.printStackTrace();
+                            }
+                        }) {
+                    @Override
+                    public byte[] getBody() {
+                        // Obtener el cuerpo de la solicitud como bytes
+                        return requestBody.getBytes();
+                    }
+
+                    @Override
+                    public String getBodyContentType() {
+                        // Obtener el tipo de contenido del cuerpo de la solicitud
+                        return "application/json; charset=utf-8";
+                    }
+                };
+
+                // Agregar la solicitud a la cola de solicitudes
+                requestQueue.add(jsonObjectRequest);
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
             }
