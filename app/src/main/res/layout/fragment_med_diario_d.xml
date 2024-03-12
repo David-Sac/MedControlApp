@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Color_Secundario"
+    tools:context=".MedDiarioD">
+
+
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginRight="15dp"
+            android:layout_height="400dp"
+            style="@style/card_med_diario_d">
+            <LinearLayout
+                style="@style/ly_card_med_diario_a">
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    style="@style/ly_txt_med_diario_a">
+                    <TextView
+                        style="@style/subtitulo_op_med_diario_a"
+                        android:text="Medicamento"/>
+                    <TextView
+                        style="@style/titulo_op_med_diario_a"
+                        android:text="Intervalo"/>
+                    <TextView
+                        style="@style/subtitulo_op_med_diario_a"
+                        android:text="Diariamente"/>
+                    <TextView
+                        style="@style/titulo_op_med_diario_a"
+                        android:text="Hora"/>
+                    <TextView
+                        style="@style/subtitulo_op_med_diario_a"
+                        android:text="8:00  1   Unidad "/>
+                    <TextView
+                        style="@style/titulo_op_med_diario_a"
+                        android:text="Duración del tratamiento"/>
+                    <EditText
+                        android:background="@null"
+                        android:inputType="number"
+                        style="@style/subtitulo_op_med_diario_a"
+                        android:text="01.febr 20224 - 05.febr 2024"/>
+                    <TextView
+                        style="@style/titulo_op_med_diario_a"
+                        android:text="Cant. de resreva"/>
+                    <TextView
+                        style="@style/subtitulo_op_med_diario_a"
+                        android:text="6 unidades"/>
+                    <TextView
+                        style="@style/titulo_op_med_diario_a"
+                        android:text="Observación sobre la toma"/>
+                    <EditText
+                        android:background="@null"
+                        android:inputType="number"
+                        style="@style/subtitulo_op_med_diario_a"
+                        android:text="Después de comer"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_sgt"
+            android:layout_gravity="center"
+            style="@style/card_btn_form"
+            >
+            <LinearLayout
+                style="@style/layout_btn_form">
+                <TextView
+                    style="@style/txt_btn_sgt"
+                    android:text="Siguiente"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+
+</FrameLayout>

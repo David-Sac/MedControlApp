@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MedPersonalizar">
+
+    <LinearLayout
+        android:background="@color/Color_Secundario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            style="@style/card_med_personalizar">
+            <LinearLayout
+               style="@style/ly_card_med_personalizar">
+                <LinearLayout
+                    style="@style/ly_txt_med_diario_a">
+                    <TextView
+                        style="@style/titulo_op_med_personalizar"
+                        android:text="En determinados días de la semana"/>
+                    <TextView
+                        style="@style/subtitulo_op_med_personalizar"
+                        android:text="Días seleccionados"/>
+                </LinearLayout>
+                <ImageButton
+                    style="@style/btn_ir"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            style="@style/card_med_personalizar">
+            <LinearLayout
+                style="@style/ly_card_med_personalizar">
+                <LinearLayout
+                    style="@style/ly_txt_med_diario_a">
+                    <TextView
+                        style="@style/titulo_op_med_personalizar"
+                        android:text="Cada x día"/>
+                    <TextView
+                        style="@style/subtitulo_op_med_personalizar"
+                        android:text="Intervalos diarios"/>
+                </LinearLayout>
+                <ImageButton
+                    style="@style/btn_ir"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            style="@style/card_med_personalizar">
+            <LinearLayout
+                style="@style/ly_card_med_personalizar">
+                <LinearLayout
+                    style="@style/ly_txt_med_diario_a">
+                    <TextView
+                        style="@style/titulo_op_med_personalizar"
+                        android:text="Cada x horas"/>
+                    <TextView
+                        style="@style/subtitulo_op_med_personalizar"
+                        android:text="Intervalos diarios"/>
+                </LinearLayout>
+                <ImageButton
+                    style="@style/btn_ir"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            style="@style/card_med_personalizar">
+            <LinearLayout
+                style="@style/ly_card_med_personalizar">
+                <LinearLayout
+                    style="@style/ly_txt_med_diario_a">
+                    <TextView
+                        style="@style/titulo_op_med_personalizar"
+                        android:text="Una vez"/>
+                    <TextView
+                        style="@style/subtitulo_op_med_personalizar"
+                        android:text="Una sola vez"/>
+                </LinearLayout>
+                <ImageButton
+                    style="@style/btn_ir"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</FrameLayout>

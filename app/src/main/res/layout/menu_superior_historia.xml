@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="5dp"
+    android:layout_margin="3dp"
+    android:background="#ffffff"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/item_medicamentos"
+            style="@style/text_menu_sup_historia"
+            android:text="Medicamentos"/>
+        <TextView
+            android:id="@+id/item_seguimiento"
+            style="@style/text_menu_sup_historia"
+            android:text="Seguimiento"/>
+        <TextView
+            android:id="@+id/item_sintomas"
+            style="@style/text_menu_sup_historia"
+            android:text="Sintomas"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

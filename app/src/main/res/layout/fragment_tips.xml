@@ -6,19 +6,111 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.tips.TipsFragment"
+    android:background="@color/Color_Secundario"
     android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/text_tips"
-        android:layout_width="match_parent"
+    <GridLayout
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:rowCount="3"
+        android:columnCount="3">
+        <LinearLayout
+            android:id="@+id/btn_consejo1"
+            style="@style/ly_consejos">
+            <ImageView
+                android:background="@drawable/consejo01"
+                style="@style/img_consejo"
+                />
+            <TextView
+                style="@style/txt_consejo"
+                android:text="Promoviendo\n el bienestar:\n Estrategias..."/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ly_consejos">
+            <ImageView
+                android:background="@drawable/consejo02"
+                style="@style/img_consejo"
+                />
+            <TextView
+                style="@style/txt_consejo"
+                android:text="La\nimportancia de\nvacunarse"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/ly_consejos">
+            <ImageView
+                android:background="@drawable/consejo03"
+                style="@style/img_consejo"
+                />
+            <TextView
+                style="@style/txt_consejo"
+                android:text="Las\nconsecuencias\nennuestra..."/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/ly_consejos">
+            <ImageView
+                android:background="@drawable/consejo04"
+                style="@style/img_consejo"
+                />
+            <TextView
+                style="@style/txt_consejo"
+                android:text="Que produce\nel tabaco\nen nuestro"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/ly_consejos">
+            <ImageView
+                android:background="@drawable/consejo05"
+                style="@style/img_consejo"
+                />
+            <TextView
+                style="@style/txt_consejo"
+                android:text="Caminar:\nbeneficios\npara..."/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/ly_consejos">
+            <ImageView
+                android:background="@drawable/consejo06"
+                style="@style/img_consejo"
+                />
+            <TextView
+                style="@style/txt_consejo"
+                android:text="Bebes: en\nque le afecta\nlas past..."/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/ly_consejos">
+            <ImageView
+                android:background="@drawable/consejo07"
+                style="@style/img_consejo"
+                />
+            <TextView
+                style="@style/txt_consejo"
+                android:text="La\nimportancia\nde cheque..."/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/ly_consejos">
+            <ImageView
+                android:background="@drawable/consejo08"
+                style="@style/img_consejo"
+                />
+            <TextView
+                style="@style/txt_consejo"
+                android:text="Un cuerpo\nlimpio y \nsano.."/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/ly_consejos">
+            <ImageView
+                android:background="@drawable/consejo09"
+                style="@style/img_consejo"
+                />
+            <TextView
+                style="@style/txt_consejo"
+                android:text="Como\nregular el\nestres..."/>
+        </LinearLayout>
+
+    </GridLayout>
+
+
 </LinearLayout>

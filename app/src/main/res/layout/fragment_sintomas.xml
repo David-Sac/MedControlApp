@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    tools:context=".ui.history.Sintomas"
+    android:background="@color/Color_Secundario"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <include layout="@layout/menu_superior_historia"
+                android:id="@+id/menu_superior"/>
+            <include layout="@layout/label_semana"/>
+
+            <TextView
+                style="@style/txt_dia"
+                android:text="Lunes"/>
+            <include layout="@layout/vista_sintoma"/>
+            <TextView
+                style="@style/txt_dia"
+                android:text="Martes"/>
+            <include layout="@layout/vista_sintoma"/>
+            <TextView
+                style="@style/txt_dia"
+                android:text="Miercoles"/>
+            <include layout="@layout/vista_sintoma"/>
+            <TextView
+                style="@style/txt_dia"
+                android:text="Jueves"/>
+            <include layout="@layout/vista_sintoma"/>
+            <TextView
+                style="@style/txt_dia"
+                android:text="Viernes"/>
+            <include layout="@layout/vista_sintoma"/>
+            <TextView
+                style="@style/txt_dia"
+                android:text="Sabado"/>
+            <include layout="@layout/vista_sintoma"/>
+            <TextView
+                style="@style/txt_dia"
+                android:text="Domingo"/>
+            <include layout="@layout/vista_sintoma"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

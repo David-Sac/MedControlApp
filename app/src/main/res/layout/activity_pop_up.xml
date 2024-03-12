@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="0dp"
+    android:layout_height="wrap_content"
+    style="@style/card_med_diario_a"
+    android:background="#ffffff"
+    tools:context=".PopUp">
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            style="@style/ly_card_med_diario_a">
+            <LinearLayout
+                style="@style/ly_txt_med_diario_a">
+                <TextView
+                    android:textSize="24sp"
+                    android:layout_marginTop="10dp"
+                    style="@style/txt_pregunta_med_diario"
+                    android:text="CAMBIAR UNIDAD"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:id="@+id/contenedor_lista"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <LinearLayout
+                    android:layout_marginTop="40dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                   <TextView
+                       android:text="CANCELAR"
+                       style="@style/text_op_popup"/>
+                    <TextView
+                        android:text="ACEPTAR"
+                        style="@style/text_op_popup"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>

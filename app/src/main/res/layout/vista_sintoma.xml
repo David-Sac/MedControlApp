@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <androidx.cardview.widget.CardView
+        style="@style/card_sintoma">
+        <LinearLayout
+            style="@style/ly_card_med_diario_a">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:background="@drawable/tos"/>
+            <LinearLayout
+                style="@style/ly_txt_med_diario_a">
+                <TextView
+                    style="@style/titulo_sintoma"
+                    android:text="Tos y flemas"/>
+                <TextView
+                    style="@style/subtitulo_sintoma_a"
+                    android:text="Por la tarde"/>
+                <TextView
+                    style="@style/subtitulo_sintoma_b"
+                    android:text="Doloroso"/>
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/expand_reloj"
+                style="@style/btn_info"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

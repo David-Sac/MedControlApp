@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Registro">
+<LinearLayout
+    style="@style/cajon_login">
+<ImageView
+    style="@style/img_login"
+    android:background="@drawable/icon_person" />
+    <EditText
+        style="@style/et_login"
+        android:hint="Nombre"/>
+</LinearLayout>
+
+    <LinearLayout
+        style="@style/cajon_login">
+        <ImageView
+            style="@style/img_login"
+            android:background="@drawable/icon_lock" />
+        <EditText
+            style="@style/et_login"
+            android:hint="Número"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/cajon_login">
+        <ImageView
+            style="@style/img_login"
+            android:background="@drawable/icon_person" />
+        <EditText
+            style="@style/et_login"
+            android:hint="Correo"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/cajon_login">
+        <ImageView
+            style="@style/img_login"
+            android:background="@drawable/icon_lock" />
+        <EditText
+            style="@style/et_login"
+            android:hint="Contraseña"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:text="He leido y acepto los terminos y condiciones"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:text="¿Usted ha leido y acepta los terminos y condiciones para el tratamiento de sus datos personales contenidos en la politica de privacidad web?"
+            />
+    </LinearLayout>
+    <Button
+        android:onClick="Siguiente"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="Registrate aqui"
+        android:backgroundTint="@color/Color_Principal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"/>
+    <Button
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrate con Facebook"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:backgroundTint="#294a9a"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"/>
+</LinearLayout>

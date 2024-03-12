@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MedDiarioC">
+
+
+    <LinearLayout
+        android:background="@color/Color_Secundario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:text="@string/p_agg_med_4"
+            style="@style/txt_pregunta_med_diario"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_height="250dp"
+            style="@style/card_med_diario_a">
+            <LinearLayout
+                style="@style/ly_card_med_diario_a">
+                <LinearLayout
+                    style="@style/ly_txt_med_diario_a">
+                    <TextView
+                        style="@style/titulo_op_med_diario_a"
+                        android:text="Observación sobre la toma"/>
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        style="@style/rg_opciones">
+                        <RadioButton
+                            android:id="@+id/radioButton1"
+                            style="@style/rb_opcion"
+                            android:text="Antes de comer" />
+                        <RadioButton
+                            android:id="@+id/radioButton2"
+                            style="@style/rb_opcion"
+                            android:text="A la hora de comer" />
+                        <RadioButton
+                            android:id="@+id/radioButton3"
+                            style="@style/rb_opcion"
+                            android:text="Después de comer" />
+                        <RadioButton
+                            android:id="@+id/radioButton4"
+                            style="@style/rb_opcion"
+                            android:text="Sin referencia a las comidas" />
+                    </RadioGroup>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_sgt"
+            android:layout_gravity="center"
+            style="@style/card_btn_form"
+            >
+            <LinearLayout
+                style="@style/layout_btn_form">
+                <TextView
+                    style="@style/txt_btn_sgt"
+                    android:text="Siguiente"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+</FrameLayout>

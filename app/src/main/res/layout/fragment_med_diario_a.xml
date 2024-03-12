@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MedDiarioA">
+
+    <LinearLayout
+        android:background="@color/Color_Secundario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            style="@style/txt_pregunta_med_diario"/>
+        <androidx.cardview.widget.CardView
+            style="@style/card_med_diario_a">
+            <LinearLayout
+                style="@style/ly_card_med_diario_a">
+                <LinearLayout
+                    style="@style/ly_txt_med_diario_a">
+                    <TextView
+                        style="@style/titulo_op_med_diario_a"
+                        android:text="Hora"/>
+                    <TextView
+                        style="@style/subtitulo_op_med_diario_a"
+                        android:text="10:22"/>
+                </LinearLayout>
+                <ImageButton
+                    android:id="@+id/expand_reloj"
+                    style="@style/btn_expandir"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            style="@style/card_med_diario_a">
+            <LinearLayout
+                style="@style/ly_card_med_diario_a">
+                <LinearLayout
+                    style="@style/ly_txt_med_diario_a">
+                    <TextView
+                        style="@style/titulo_op_med_diario_a"
+                        android:text="Unidad"/>
+                    <TextView
+                        style="@style/subtitulo_op_med_diario_a"
+                        android:text="Unidad"/>
+                </LinearLayout>
+                <ImageButton
+                    android:id="@+id/expand_unidad"
+                    style="@style/btn_expandir"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            style="@style/card_med_diario_a">
+            <LinearLayout
+                style="@style/ly_card_med_diario_a">
+                <LinearLayout
+                    style="@style/ly_txt_med_diario_a">
+                    <TextView
+                        style="@style/titulo_op_med_diario_a"
+                        android:text="Cantidad"/>
+                    <EditText
+                        android:background="@null"
+                        android:inputType="number"
+                        style="@style/subtitulo_op_med_diario_a"
+                        android:text="1"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_sgt"
+            android:layout_gravity="center"
+            style="@style/card_btn_form"
+            >
+            <LinearLayout
+                style="@style/layout_btn_form">
+                <TextView
+                    style="@style/txt_btn_sgt"
+                    android:text="Siguiente"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</FrameLayout>

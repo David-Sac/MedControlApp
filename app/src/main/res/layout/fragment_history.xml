@@ -6,19 +6,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.history.HistoryFragment"
+    android:background="@color/Color_Secundario"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/text_history"
+    <include layout="@layout/menu_superior_historia"
+        android:id="@+id/menu_superior"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginBottom="15dp"
+        app:cardElevation="45dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
+        <LinearLayout
+            style="@style/layout_horizontal_form"
+            android:gravity="center">
+            <ImageButton
+                android:layout_margin="5dp"
+                android:background="@drawable/arrow_left"
+                android:layout_width="35dp"
+                android:layout_height="35dp"/>
+            <TextView
+                android:textSize="20sp"
+                android:textColor="#54977f"
+                android:layout_gravity="center"
+                android:text="Hoy, 23 de Enero 2024"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <include layout="@layout/vista_medicamento_historia"/>
+    <include layout="@layout/vista_medicamento_historia" />
+
 </LinearLayout>

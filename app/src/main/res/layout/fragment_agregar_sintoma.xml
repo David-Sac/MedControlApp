@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/Color_Secundario"
+    tools:context=".ui.today.AgregarSintoma">
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="20dp"
+        android:layout_height="wrap_content"
+        style="@style/card_sintoma">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_margin="5dp"
+                    android:background="@drawable/icon_termometro"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"/>
+                <TextView
+                    style="@style/txt_dia"
+                    android:text="Agregar Temperatura Corporal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/text_med_formulario"
+                    android:textSize="20sp"
+                    android:text="Celcius °C:"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20sp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="40dp"
+                    style="@style/input">
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/input"
+                        android:id="@+id/et_temperatura" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="20dp"
+        android:layout_height="wrap_content"
+        style="@style/card_sintoma">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_margin="5dp"
+                    android:background="@drawable/icon_estado"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"/>
+                <TextView
+                    style="@style/txt_dia"
+                    android:text="Agregar Estado"/>
+            </LinearLayout>
+            <GridLayout
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="4">
+                <LinearLayout
+                    style="@style/cajon_estado">
+                    <ImageView
+                        style="@style/img_estado"
+                        android:background="@drawable/icon_estado"/>
+                    <TextView
+                        style="@style/text_estado"
+                        android:text="Fiebre"/>
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/cajon_estado">
+                    <ImageView
+                        style="@style/img_estado"
+                        android:background="@drawable/icon_estado"/>
+                    <TextView
+                        style="@style/text_estado"
+                        android:text="Vomitos"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/cajon_estado">
+                    <ImageView
+                        style="@style/img_estado"
+                        android:background="@drawable/icon_estado"/>
+                    <TextView
+                        style="@style/text_estado"
+                        android:text="Nauseas"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/cajon_estado">
+                    <ImageView
+                        style="@style/img_estado"
+                        android:background="@drawable/icon_estado"/>
+                    <TextView
+                        style="@style/text_estado"
+                        android:text="Cansancio"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/cajon_estado">
+                    <ImageView
+                        style="@style/img_estado"
+                        android:background="@drawable/icon_estado"/>
+                    <TextView
+                        style="@style/text_estado"
+                        android:text="Tos y\n Flemas"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/cajon_estado">
+                    <ImageView
+                        style="@style/img_estado"
+                        android:background="@drawable/icon_estado"/>
+                    <TextView
+                        style="@style/text_estado"
+                        android:text="Sudor"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/cajon_estado">
+                    <ImageView
+                        style="@style/img_estado"
+                        android:background="@drawable/icon_estado"/>
+                    <TextView
+                        style="@style/text_estado"
+                        android:text="Normal"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/cajon_estado">
+                    <ImageView
+                        style="@style/img_estado"
+                        android:background="@drawable/icon_estado"/>
+                    <TextView
+                        style="@style/text_estado"
+                        android:text="Mejor"/>
+                </LinearLayout>
+
+            </GridLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/text_med_formulario"
+                    android:textSize="20sp"
+                    android:text="¿Cuándo?"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20sp"/>
+                <Spinner
+                    android:background="@color/Color_Secundario"
+                    android:layout_margin="10dp"
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:entries="@array/times_of_day" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/text_med_formulario"
+                    android:textSize="20sp"
+                    android:text="Comentario: "
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20sp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="40dp"
+                    style="@style/input">
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/input"
+                        android:background="@color/Color_Secundario"
+
+                        android:id="@+id/et_comentario" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>
