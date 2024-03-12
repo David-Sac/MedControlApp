@@ -25,7 +25,7 @@
                     style="@style/ly_txt_med_diario_a">
                     <TextView
                         style="@style/subtitulo_op_med_diario_a"
-                        android:text="Medicamento"/>
+                        android:text="Aspirina"/>
                     <TextView
                         style="@style/titulo_op_med_diario_a"
                         android:text="Intervalo"/>
@@ -45,7 +45,7 @@
                         android:background="@null"
                         android:inputType="number"
                         style="@style/subtitulo_op_med_diario_a"
-                        android:text="01.febr 20224 - 05.febr 2024"/>
+                        android:text="12.marz 20224 - 25.marz 2024"/>
                     <TextView
                         style="@style/titulo_op_med_diario_a"
                         android:text="Cant. de resreva"/>

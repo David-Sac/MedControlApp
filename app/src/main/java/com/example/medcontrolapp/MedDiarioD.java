@@ -1,8 +1,10 @@
 package com.example.medcontrolapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -42,7 +44,56 @@ public class MedDiarioD extends Fragment {
 
     // TODO: Rename and change types of parameters
     private String mParam1;
+    String requestBody;
     private String mParam2;
+
+    private MedicamentoDiario activity;
+
+    // Método para establecer la referencia al activity
+    public void setMainActivity(MedicamentoDiario activity) {
+        this.activity = activity;
+    }
+    String datos;
+    // Método donde accedes a la información enviada desde los otros fragmentos
+    private void obtenerDatos() {
+        if (activity != null) {
+            datos = activity.obtenerDatos(); // Llama al método en el activity
+
+        }
+    }
+
+    // Este método se llama cuando el fragmento está asociado a la actividad
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof MedicamentoDiario) {
+            activity = (MedicamentoDiario) context;
+        } else {
+            throw new ClassCastException(context.toString()
+                    + " debe implementar la interfaz MainActivity");
+        }
+    }
+
+
+    private DataListener dataListener;
+
+    // Método para establecer el listener en el fragmento
+    public void setDataListener(DataListener listener) {
+        this.dataListener = listener;
+    }
+
+    // Método para enviar datos al listener
+    private void sendDataToActivity(String data) {
+        if (dataListener != null) {
+            dataListener.onDataReceived(data);
+        }
+    }
+
+    // Ejemplo de método donde envías los datos
+    private void sendData(String data) {
+        String dataToSend = "datos del fragmento 1";
+        sendDataToActivity(dataToSend);
+    }
 
     public MedDiarioD() {
         // Required empty public constructor
@@ -81,16 +132,20 @@ public class MedDiarioD extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_med_diario_d, container, false);
         btnSiguiente=root.findViewById(R.id.btn_sgt);
+        obtenerDatos();
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://universidadbackend.azurewebsites.net//crearmedicina";
+                String url = "https://universidadbackend.azurewebsites.net/crearmedicina";
 
                 // Crea la cadena JSON como se muestra en tu ejemplo
+
+                Intent intent = getActivity().getIntent();
+                String datos = intent.getStringExtra("nombre");
                 String requestBody = "{" +
                         "\"id\":0," +
                         "\"idUsuario\":1," +
-                        "\"nombre\":\"Aspirina\"," +
+                        "\"nombre\":\""+datos+"\"," +
                         "\"hora\":\"13:30\"," +
                         "\"unidad\":1," +
                         "\"cantidad\":1," +
@@ -101,7 +156,6 @@ public class MedDiarioD extends Fragment {
                         "\"frecuensiaSeleccion\":[0]," +
                         "\"estado\":true" +
                         "}";
-
                 // Crear la cola de solicitudes Volley
                 RequestQueue requestQueue = Volley.newRequestQueue(getContext());
 
@@ -141,8 +195,8 @@ public class MedDiarioD extends Fragment {
 
                 // Agregar la solicitud a la cola de solicitudes
                 requestQueue.add(jsonObjectRequest);
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
+                Intent intento = new Intent(getActivity(), MainActivity.class);
+                startActivity(intento);
             }
         });
 

@@ -39,7 +39,25 @@ public class MedDiarioA extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private DataListener dataListener;
 
+    // Método para establecer el listener en el fragmento
+    public void setDataListener(DataListener listener) {
+        this.dataListener = listener;
+    }
+
+    // Método para enviar datos al listener
+    private void sendDataToActivity(String data) {
+        if (dataListener != null) {
+            dataListener.onDataReceived(data);
+        }
+    }
+
+    // Ejemplo de método donde envías los datos
+    private void sendData(String data) {
+        String dataToSend = "datos del fragmento 1";
+        sendDataToActivity(dataToSend);
+    }
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -129,6 +147,7 @@ public class MedDiarioA extends Fragment {
                         // second: segundo seleccionado
                         horaSeleccionada = String.format(Locale.getDefault(), "%02d:%02d:%02d", hourOfDay, minute, second);
 
+                        sendData("\"hora\":\""+horaSeleccionada+"\",");
                     }
                 },
                 // Valores iniciales
@@ -149,6 +168,8 @@ public class MedDiarioA extends Fragment {
 
         // Mostrar el diálogo
         timePickerDialog.show(getParentFragmentManager(), "TimePickerDialog");
+
+
     }
 
     @Override
@@ -162,8 +183,10 @@ public class MedDiarioA extends Fragment {
 
                 if(id==1){
                     unidad=variable;
+
                 }else{
                     dias=variable;
+
                 }
                 // Hacer algo con la variable devuelta
             }

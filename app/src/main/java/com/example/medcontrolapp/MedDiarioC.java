@@ -27,6 +27,26 @@ public class MedDiarioC extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private DataListener dataListener;
+
+    // Método para establecer el listener en el fragmento
+    public void setDataListener(DataListener listener) {
+        this.dataListener = listener;
+    }
+
+    // Método para enviar datos al listener
+    private void sendDataToActivity(String data) {
+        if (dataListener != null) {
+            dataListener.onDataReceived(data);
+        }
+    }
+
+    // Ejemplo de método donde envías los datos
+    private void sendData(String data) {
+        String dataToSend = "datos del fragmento 1";
+        sendDataToActivity(dataToSend);
+    }
+
     public MedDiarioC() {
         // Required empty public constructor
     }
