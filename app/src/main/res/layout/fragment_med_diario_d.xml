@@ -24,6 +24,7 @@
                     android:gravity="center_vertical"
                     style="@style/ly_txt_med_diario_a">
                     <TextView
+                        android:id="@+id/nombre"
                         style="@style/subtitulo_op_med_diario_a"
                         android:text="Aspirina"/>
                     <TextView

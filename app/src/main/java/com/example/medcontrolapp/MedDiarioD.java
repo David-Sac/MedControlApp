@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -35,6 +36,7 @@ import org.json.JSONObject;
  */
 public class MedDiarioD extends Fragment {
     CardView btnSiguiente;
+    TextView tvNombre;
     private RequestQueue requestQueue;
     private String url = "https://universidadbackend.azurewebsites.net/crearmedicina";
     // TODO: Rename parameter arguments, choose names that match
@@ -132,6 +134,10 @@ public class MedDiarioD extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_med_diario_d, container, false);
         btnSiguiente=root.findViewById(R.id.btn_sgt);
+        Intent intent = getActivity().getIntent();
+        String datos = intent.getStringExtra("nombre");
+        tvNombre=root.findViewById(R.id.nombre);
+        tvNombre.setText(datos);
         obtenerDatos();
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,8 +146,7 @@ public class MedDiarioD extends Fragment {
 
                 // Crea la cadena JSON como se muestra en tu ejemplo
 
-                Intent intent = getActivity().getIntent();
-                String datos = intent.getStringExtra("nombre");
+
                 String requestBody = "{" +
                         "\"id\":0," +
                         "\"idUsuario\":1," +
