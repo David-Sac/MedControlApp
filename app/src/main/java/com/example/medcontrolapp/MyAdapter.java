@@ -5,6 +5,7 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.DrawableRes;
@@ -14,12 +15,29 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+    private int mSelectedIndex = -1; // Variable para almacenar el índice del elemento seleccionado
+    private OnItemClickListener mListener; // Escuchador de clics
 
     private List<String> mData;
     private int mSelectedPosition = RecyclerView.NO_POSITION;
 
     public MyAdapter(List<String> data) {
         mData = data;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
+
+    // Define una interfaz para el escuchador de clics
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    // Define un método para establecer la posición del elemento seleccionado
+    public void setSelectedIndex(int index) {
+        mSelectedIndex = index;
+        notifyDataSetChanged(); // Notifica al adaptador que los datos han cambiado para refrescar la vista
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.example.medcontrolapp;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -31,6 +33,8 @@ public class MedDiarioA extends Fragment {
     ImageButton expanUnidad;
     CardView btnSiguiente;
     String nombre;
+    int unidad, dias,id;
+    private static final int REQUEST_POPUP = 1;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -105,7 +109,8 @@ public class MedDiarioA extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), PopUp.class);
                 intent.putExtra("id",1);
-                startActivity(intent);
+                id=1;
+                startActivityForResult(intent, REQUEST_POPUP);
             }
         });
 
@@ -146,4 +151,22 @@ public class MedDiarioA extends Fragment {
         timePickerDialog.show(getParentFragmentManager(), "TimePickerDialog");
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_POPUP) {
+            if (resultCode == RESULT_OK) {
+                // Extraer los datos devueltos por la Actividad de Popup
+                int variable = data.getIntExtra("seleccion", 1);
+
+                if(id==1){
+                    unidad=variable;
+                }else{
+                    dias=variable;
+                }
+                // Hacer algo con la variable devuelta
+            }
+        }
+    }
 }

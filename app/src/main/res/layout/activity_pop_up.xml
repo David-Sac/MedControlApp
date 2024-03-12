@@ -31,9 +31,12 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                    <TextView
+                       android:id="@+id/tv_cancelar"
                        android:text="CANCELAR"
                        style="@style/text_op_popup"/>
                     <TextView
+                        android:onClick="Aceptar"
+                        android:id="@+id/tv_aceptar"
                         android:text="ACEPTAR"
                         style="@style/text_op_popup"/>
                 </LinearLayout>
