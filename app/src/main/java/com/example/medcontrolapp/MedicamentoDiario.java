@@ -8,6 +8,7 @@ import android.os.Bundle;
 public class MedicamentoDiario extends AppCompatActivity implements DataListener{
     String json ="";
     private String nombre;
+    public String hora;
 
     // Método getter para obtener el valor de la propiedad 'nombre'
     public String getNombre() {

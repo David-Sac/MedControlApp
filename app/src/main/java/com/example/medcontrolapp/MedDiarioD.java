@@ -2,6 +2,7 @@ package com.example.medcontrolapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -36,7 +37,7 @@ import org.json.JSONObject;
  */
 public class MedDiarioD extends Fragment {
     CardView btnSiguiente;
-    TextView tvNombre;
+    TextView tvNombre, tvhora;
     private RequestQueue requestQueue;
     private String url = "https://universidadbackend.azurewebsites.net/crearmedicina";
     // TODO: Rename parameter arguments, choose names that match
@@ -48,6 +49,8 @@ public class MedDiarioD extends Fragment {
     private String mParam1;
     String requestBody;
     private String mParam2;
+    SharedPreferences sharedPreferences;
+
 
     private MedicamentoDiario activity;
 
@@ -55,7 +58,7 @@ public class MedDiarioD extends Fragment {
     public void setMainActivity(MedicamentoDiario activity) {
         this.activity = activity;
     }
-    String datos;
+    String datos, hora;
     // Método donde accedes a la información enviada desde los otros fragmentos
     private void obtenerDatos() {
         if (activity != null) {
@@ -134,10 +137,16 @@ public class MedDiarioD extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_med_diario_d, container, false);
         btnSiguiente=root.findViewById(R.id.btn_sgt);
+        sharedPreferences=getActivity().getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
+        hora=sharedPreferences.getString("hora","");
         Intent intent = getActivity().getIntent();
         String datos = intent.getStringExtra("nombre");
         tvNombre=root.findViewById(R.id.nombre);
+        tvhora=root.findViewById(R.id.hora);
+        tvhora.setText(hora);
         tvNombre.setText(datos);
+
+
         obtenerDatos();
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,7 +160,7 @@ public class MedDiarioD extends Fragment {
                         "\"id\":0," +
                         "\"idUsuario\":1," +
                         "\"nombre\":\""+datos+"\"," +
-                        "\"hora\":\"13:30\"," +
+                        "\"hora\":\""+hora+"\"," +
                         "\"unidad\":1," +
                         "\"cantidad\":1," +
                         "\"fechaInicio\":\"2024-03-12T19:33:13.450Z\"," +
