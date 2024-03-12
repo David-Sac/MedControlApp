@@ -45,17 +45,17 @@
         <TextView
             android:id="@+id/f_semanal"
             style="@style/texto_medicamento"
-            android:text="FSemanal"
+            android:text="Diario"
             />
         <TextView
             android:id="@+id/f_diaria"
             style="@style/texto_medicamento"
-            android:text="FDiario"
+            android:text="Una vez al día"
             />
         <TextView
             android:id="@+id/txt_horas"
             style="@style/texto_medicamento"
-            android:text="Horas"
+            android:text="14:00"
             />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
