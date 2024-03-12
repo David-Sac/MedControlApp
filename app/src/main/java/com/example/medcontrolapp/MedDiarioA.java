@@ -1,8 +1,11 @@
 package com.example.medcontrolapp;
 
 import static android.app.Activity.RESULT_OK;
+import android.content.SharedPreferences;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.StyleRes;
@@ -33,6 +36,7 @@ public class MedDiarioA extends Fragment {
     ImageButton expanUnidad;
     CardView btnSiguiente;
     String nombre;
+    SharedPreferences sharedPreferences;
     int unidad, dias,id;
     private static final int REQUEST_POPUP = 1;
     // TODO: Rename parameter arguments, choose names that match
@@ -101,9 +105,9 @@ public class MedDiarioA extends Fragment {
         btnSiguiente=root.findViewById(R.id.btn_sgt);
         expanReloj=root.findViewById(R.id.expand_reloj);
         expanUnidad=root.findViewById(R.id.expand_unidad);
-
         Intent intent = getActivity().getIntent();
         String nombre = intent.getStringExtra("nombre");
+        sharedPreferences = getActivity().getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -148,6 +152,11 @@ public class MedDiarioA extends Fragment {
                         horaSeleccionada = String.format(Locale.getDefault(), "%02d:%02d:%02d", hourOfDay, minute, second);
 
                         sendData("\"hora\":\""+horaSeleccionada+"\",");
+
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("hora",horaSeleccionada);
+
+                        editor.apply();
                     }
                 },
                 // Valores iniciales

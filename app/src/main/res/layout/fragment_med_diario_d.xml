@@ -37,6 +37,7 @@
                         style="@style/titulo_op_med_diario_a"
                         android:text="Hora"/>
                     <TextView
+                        android:id="@+id/hora"
                         style="@style/subtitulo_op_med_diario_a"
                         android:text="8:00  1   Unidad "/>
                     <TextView
